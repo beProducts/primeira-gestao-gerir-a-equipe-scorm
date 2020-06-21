@@ -211,7 +211,7 @@ let pluginComponentFormJS = {
     // title, content, btnConfirmText, btnCancelText, callBackConfirm, callBackCancel
     pluginComponentDialogJS.confirm('', "Confirma a gravação dos dados?", "Sim", "Não", function () {
       // Get form data
-      let postData = $("#frmQuestions").serializeArray();
+      let postData = $("#frmQuestions").find(':not([data-scorm-mode-on])').serializeArray();
       postData.push({ 'name': 'companyId', 'value': pluginJS.userData.companyId });
       postData.push({ 'name': 'productId', 'value': pluginJS.userData.productId });
       postData.push({ 'name': 'objectId', 'value': pluginJS.userData.objectId });
