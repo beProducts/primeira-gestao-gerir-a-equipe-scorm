@@ -625,7 +625,8 @@ export default {
     setChecksMenu() {
       this.getUserChecks().then( (data) => {
         if(data.status === true){
-          this.percent = ((data.userChecks.length / 65) * 100).toFixed(0);
+          console.log(data.userChecks.length, process.env.VUE_APP_QUANTITY_OF_SESSION)
+          this.percent = ((data.userChecks.length / process.env.VUE_APP_QUANTITY_OF_SESSION) * 100).toFixed(0);
 
           data.userChecks.forEach((e) => {
             const objectId = parseInt(e.objectId, 10);
