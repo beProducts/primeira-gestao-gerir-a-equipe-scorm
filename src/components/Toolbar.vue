@@ -9,7 +9,7 @@
           </a>
         </p>
       </div>
-      <div>
+      <div v-if="scormMode !== 'ON'">
         <p class="center-align">
           <a href="javascript:void(0);" @click="openHelpBar">
             <HelpCircle />
@@ -17,7 +17,7 @@
           </a>
         </p>
       </div>
-      <div>
+      <div v-if="scormMode !== 'ON'">
         <p class="center-align">
           <a href="javascript:void(0);" @click="toggleCommentBar">
             <ChatIcon />
@@ -31,11 +31,11 @@
     <div class="be-navigation" ref="beNavigation">
       <div class="header-toolbar">
         <div class="account-functions">
-          <a href="javascript:void(0);" class="close" @click="goToRoute('/profile');">
+          <a v-if="scormMode !== 'ON'" href="javascript:void(0);" class="close" @click="goToRoute('/profile');">
             <span>Perfil</span> <AccountEdit />
           </a>
-          <span class="separator">|</span>
-          <a href="javascript:void(0);" class="close" @click="logoff">
+          <span v-if="scormMode !== 'ON'" class="separator">|</span>
+          <a v-if="scormMode !== 'ON'" href="javascript:void(0);" class="close" @click="logoff">
             <span>Sair</span> <Logout />
           </a>
         </div>
@@ -45,306 +45,6 @@
       </div>
       <div class="nav-body">
         <div class="be-menu-main">
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Comece por aqui"
-              src="menu-icon-1.png"
-              asrc="menu-icon-1-active.png"
-              route="/comece-por-aqui"
-              :selected="route1Selected"
-              :checked="route1Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="É a sua primeira vez?"
-              src="menu-icon-2.png"
-              asrc="menu-icon-2-active.png"
-              route="/e-a-sua-primeira-vez"
-              :selected="route2Selected"
-              :checked="route2Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="A história da liderança"
-              src="menu-icon-3.png"
-              asrc="menu-icon-3-active.png"
-              route="/a-historia-da-lideranca"
-              :selected="route3Selected"
-              :checked="route3Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="A História de Ranimiro Lotufo"
-              src="menu-icon-4.png"
-              asrc="menu-icon-4-active.png"
-              route="/a-historia-de-ranimiro-lotufo"
-              :selected="route4Selected"
-              :checked="route4Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Agora é com você!"
-              src="menu-icon-5.png"
-              asrc="menu-icon-5-active.png"
-              route="/agora-e-com-voce"
-              :selected="route5Selected"
-              :checked="route5Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Campo ou Arquibancada"
-              src="menu-icon-6.png"
-              asrc="menu-icon-6-active.png"
-              route="/campo-ou-arquibancada"
-              :selected="route6Selected"
-              :checked="route6Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Estar preparado faz diferença"
-              src="menu-icon-7.png"
-              asrc="menu-icon-7-active.png"
-              route="/estar-preparado-faz-diferenca"
-              :selected="route7Selected"
-              :checked="route7Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mapa de investigação do negócio"
-              src="menu-icon-8.png"
-              asrc="menu-icon-8-active.png"
-              route="/mapa-de-investigacao-do-negocio"
-              :selected="route8Selected"
-              :checked="route8Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mapa de investigação da área"
-              src="menu-icon-9.png"
-              asrc="menu-icon-9-active.png"
-              route="/mapa-de-investigacao-da-area"
-              :selected="route9Selected"
-              :checked="route9Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Estresse e nervosismo"
-              src="menu-icon-10.png"
-              asrc="menu-icon-10-active.png"
-              route="/estresse-e-nervosismo"
-              :selected="route10Selected"
-              :checked="route10Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Perguntas poderosas"
-              src="menu-icon-11.png"
-              asrc="menu-icon-11-active.png"
-              route="/perguntas-poderosas"
-              :selected="route11Selected"
-              :checked="route11Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Agora é com você!"
-              src="menu-icon-12.png"
-              asrc="menu-icon-12-active.png"
-              route="/agora-e-com-voce-2"
-              :selected="route12Selected"
-              :checked="route12Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Inspire-se aqui"
-              src="menu-icon-13.png"
-              asrc="menu-icon-13-active.png"
-              route="/inspire-se-aqui-1"
-              :selected="route13Selected"
-              :checked="route13Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Ponto de partida para a prática"
-              src="menu-icon-14.png"
-              asrc="menu-icon-14-active.png"
-              route="/ponto-de-partida-para-a-pratica"
-              :selected="route14Selected"
-              :checked="route14Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Lidando com as emoções"
-              src="menu-icon-15.png"
-              asrc="menu-icon-15-active.png"
-              route="/lidando-com-as-emocoes"
-              :selected="route15Selected"
-              :checked="route15Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Como se preparar"
-              src="menu-icon-16.png"
-              asrc="menu-icon-16-active.png"
-              route="/como-se-preparar"
-              :selected="route16Selected"
-              :checked="route16Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Inspire-se aqui"
-              src="menu-icon-17.png"
-              asrc="menu-icon-17-active.png"
-              route="/inspire-se-aqui-2"
-              :selected="route17Selected"
-              :checked="route17Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Ponto de partida para a prática"
-              src="menu-icon-18.png"
-              asrc="menu-icon-18-active.png"
-              route="/ponto-de-partida-para-a-pratica-2"
-              :selected="route18Selected"
-              :checked="route18Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Sobre gerir a si mesmo"
-              src="menu-icon-19.png"
-              asrc="menu-icon-19-active.png"
-              route="/sobre-gerir-a-si-mesmo"
-              :selected="route19Selected"
-              :checked="route19Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="O que já sei sobre mim"
-              src="menu-icon-20.png"
-              asrc="menu-icon-20-active.png"
-              route="/o-que-ja-sei-sobre-mim"
-              :selected="route20Selected"
-              :checked="route20Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="O olhar do outro sobre mim"
-              src="menu-icon-21.png"
-              asrc="menu-icon-21-active.png"
-              route="/o-olhar-do-outro-sobre-mim"
-              :selected="route21Selected"
-              :checked="route21Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Meu olhar sobre quem sou Eu"
-              src="menu-icon-22.png"
-              asrc="menu-icon-22-active.png"
-              route="/meu-olhar-sobre-quem-sou-eu"
-              :selected="route22Selected"
-              :checked="route22Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Meu olhar sobre a minha história"
-              src="menu-icon-23.png"
-              asrc="menu-icon-23-active.png"
-              route="/meu-olhar-sobre-a-minha-historia"
-              :selected="route23Selected"
-              :checked="route23Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Análise"
-              src="menu-icon-24.png"
-              asrc="menu-icon-24-active.png"
-              route="/analise"
-              :selected="route24Selected"
-              :checked="route24Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Impacto dos sentimentos"
-              src="menu-icon-25.png"
-              asrc="menu-icon-25-active.png"
-              route="/impacto-dos-sentimentos"
-              :selected="route25Selected"
-              :checked="route25Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mindset de liderança"
-              src="menu-icon-26.png"
-              asrc="menu-icon-26-active.png"
-              route="/mindset-de-lideranca"
-              :selected="route26Selected"
-              :checked="route26Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Ansiedade e Normose"
-              src="menu-icon-27.png"
-              asrc="menu-icon-27-active.png"
-              route="/ansiedade-e-normose"
-              :selected="route27Selected"
-              :checked="route27Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="O efeito Dunning-kruger"
-              src="menu-icon-28.png"
-              asrc="menu-icon-28-active.png"
-              route="/o-efeito-dunning-kruger"
-              :selected="route28Selected"
-              :checked="route28Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Síndrome do Impostor"
-              src="menu-icon-29.png"
-              asrc="menu-icon-29-active.png"
-              route="/sindrome-do-impostor"
-              :selected="route29Selected"
-              :checked="route29Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Os próximos 15 dias"
-              src="menu-icon-30.png"
-              asrc="menu-icon-30-active.png"
-              route="/os-proximos-15-dias"
-              :selected="route30Selected"
-              :checked="route30Check"
-              @changeRoute="closeNavigation" />
-          </div>
           <div class="nav-body-item">
             <NavMenuItem
               text="Gerindo de perto a equipe"
@@ -665,36 +365,6 @@
               :checked="route62Check"
               @changeRoute="closeNavigation" />
           </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mais sobre preparação"
-              src="menu-icon-63.png"
-              asrc="menu-icon-63-active.png"
-              route="/mais-sobre-preparacao"
-              :selected="route63Selected"
-              :checked="route63Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mais sobre gerir a equipe"
-              src="menu-icon-64.png"
-              asrc="menu-icon-64-active.png"
-              route="/mais-sobre-gerir-a-equipe"
-              :selected="route64Selected"
-              :checked="route64Check"
-              @changeRoute="closeNavigation" />
-          </div>
-          <div class="nav-body-item">
-            <NavMenuItem
-              text="Mais sobre gerir a si mesmo"
-              src="menu-icon-65.png"
-              asrc="menu-icon-65-active.png"
-              route="/mais-sobre-gerir-a-si-mesmo"
-              :selected="route65Selected"
-              :checked="route65Check"
-              @changeRoute="closeNavigation" />
-          </div>
         </div>
       </div>
       <div class="be-progress">
@@ -721,7 +391,6 @@
       </div>
     </div>
 
-    <!-- Be Comment Bar -->
     <div class="be-comment-bar" ref="beCommentBar">
       <div id="loading-comment-container" class="state">
         <img :src="LoadingImage" alt="Loading" />
@@ -826,36 +495,7 @@ export default {
   },
   data() {
     return {
-      route1Check: false,
-      route2Check: false,
-      route3Check: false,
-      route4Check: false,
-      route5Check: false,
-      route6Check: false,
-      route7Check: false,
-      route8Check: false,
-      route9Check: false,
-      route10Check: false,
-      route11Check: false,
-      route12Check: false,
-      route13Check: false,
-      route14Check: false,
-      route15Check: false,
-      route16Check: false,
-      route17Check: false,
-      route18Check: false,
-      route19Check: false,
-      route20Check: false,
-      route21Check: false,
-      route22Check: false,
-      route23Check: false,
-      route24Check: false,
-      route25Check: false,
-      route26Check: false,
-      route27Check: false,
-      route28Check: false,
-      route29Check: false,
-      route30Check: false,
+      scormMode: process.env.VUE_APP_SCORM_MODE,
       route31Check: false,
       route32Check: false,
       route33Check: false,
@@ -888,39 +528,7 @@ export default {
       route60Check: false,
       route61Check: false,
       route62Check: false,
-      route63Check: false,
-      route64Check: false,
-      route65Check: false,
-      route1Selected: false,
-      route2Selected: false,
-      route3Selected: false,
-      route4Selected: false,
-      route5Selected: false,
-      route6Selected: false,
-      route7Selected: false,
-      route8Selected: false,
-      route9Selected: false,
-      route10Selected: false,
-      route11Selected: false,
-      route12Selected: false,
-      route13Selected: false,
-      route14Selected: false,
-      route15Selected: false,
-      route16Selected: false,
-      route17Selected: false,
-      route18Selected: false,
-      route19Selected: false,
-      route20Selected: false,
-      route21Selected: false,
-      route22Selected: false,
-      route23Selected: false,
-      route24Selected: false,
-      route25Selected: false,
-      route26Selected: false,
-      route27Selected: false,
-      route28Selected: false,
-      route29Selected: false,
-      route30Selected: false,
+
       route31Selected: false,
       route32Selected: false,
       route33Selected: false,
@@ -953,9 +561,7 @@ export default {
       route60Selected: false,
       route61Selected: false,
       route62Selected: false,
-      route63Selected: false,
-      route64Selected: false,
-      route65Selected: false,
+
       percent: 0,
       LoadingImage: LoadingImage,
     };
@@ -982,36 +588,6 @@ export default {
     setSelectedMenu(){
       const pageId = this.$route.meta.pageId || 0;
       switch(pageId){
-        case 81: this.route1Selected = true; break;
-        case 82: this.route2Selected = true; break;
-        case 83: this.route3Selected = true; break;
-        case 30: this.route4Selected = true; break;
-        case 31: this.route5Selected = true; break;
-        case 32: this.route6Selected = true; break;
-        case 84: this.route7Selected = true; break;
-        case 85: this.route8Selected = true; break;
-        case 86: this.route9Selected = true; break;
-        case 87: this.route10Selected = true; break;
-        case 88: this.route11Selected = true; break;
-        case 89: this.route12Selected = true; break;
-        case 90: this.route13Selected = true; break;
-        case 91: this.route14Selected = true; break;
-        case 92: this.route15Selected = true; break;
-        case 93: this.route16Selected = true; break;
-        case 94: this.route17Selected = true; break;
-        case 95: this.route18Selected = true; break;
-        case 96: this.route19Selected = true; break;
-        case 33: this.route20Selected = true; break;
-        case 34: this.route21Selected = true; break;
-        case 35: this.route22Selected = true; break;
-        case 36: this.route23Selected = true; break;
-        case 37: this.route24Selected = true; break;
-        case 38: this.route25Selected = true; break;
-        case 39: this.route26Selected = true; break;
-        case 40: this.route27Selected = true; break;
-        case 41: this.route28Selected = true; break;
-        case 42: this.route29Selected = true; break;
-        case 97: this.route30Selected = true; break;
         case 43: this.route31Selected = true; break;
         case 44: this.route32Selected = true; break;
         case 45: this.route33Selected = true; break;
@@ -1044,49 +620,18 @@ export default {
         case 66: this.route60Selected = true; break;
         case 67: this.route61Selected = true; break;
         case 68: this.route62Selected = true; break;
-        case 98: this.route63Selected = true; break;
-        case 99: this.route64Selected = true; break;
-        case 100: this.route65Selected = true; break;
       }
     },
     setChecksMenu() {
       this.getUserChecks().then( (data) => {
         if(data.status === true){
-          this.percent = ((data.userChecks.length / 65) * 100).toFixed(0);
+          console.log(data.userChecks.length, process.env.VUE_APP_QUANTITY_OF_SESSION)
+          this.percent = ((data.userChecks.length / process.env.VUE_APP_QUANTITY_OF_SESSION) * 100).toFixed(0);
 
           data.userChecks.forEach((e) => {
             const objectId = parseInt(e.objectId, 10);
             switch(objectId){
-              case 81: this.route1Check = true; break;
-              case 82: this.route2Check = true; break;
-              case 83: this.route3Check = true; break;
-              case 30: this.route4Check = true; break;
-              case 31: this.route5Check = true; break;
-              case 32: this.route6Check = true; break;
-              case 84: this.route7Check = true; break;
-              case 85: this.route8Check = true; break;
-              case 86: this.route9Check = true; break;
-              case 87: this.route10Check = true; break;
-              case 88: this.route11Check = true; break;
-              case 89: this.route12Check = true; break;
-              case 90: this.route13Check = true; break;
-              case 91: this.route14Check = true; break;
-              case 92: this.route15Check = true; break;
-              case 93: this.route16Check = true; break;
-              case 94: this.route17Check = true; break;
-              case 95: this.route18Check = true; break;
-              case 96: this.route19Check = true; break;
-              case 33: this.route20Check = true; break;
-              case 34: this.route21Check = true; break;
-              case 35: this.route22Check = true; break;
-              case 36: this.route23Check = true; break;
-              case 37: this.route24Check = true; break;
-              case 38: this.route25Check = true; break;
-              case 39: this.route26Check = true; break;
-              case 40: this.route27Check = true; break;
-              case 41: this.route28Check = true; break;
-              case 42: this.route29Check = true; break;
-              case 97: this.route30Check = true; break;
+              
               case 43: this.route31Check = true; break;
               case 44: this.route32Check = true; break;
               case 45: this.route33Check = true; break;
@@ -1119,9 +664,6 @@ export default {
               case 66: this.route60Check = true; break;
               case 67: this.route61Check = true; break;
               case 68: this.route62Check = true; break;
-              case 98: this.route63Check = true; break;
-              case 99: this.route64Check = true; break;
-              case 100: this.route65Check = true; break;
             }
           });
         }
