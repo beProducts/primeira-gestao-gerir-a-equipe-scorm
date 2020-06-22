@@ -65,7 +65,7 @@ const router = new Router({
       path: '/',
       redirect: () => {
         if (process.env.VUE_APP_SCORM_MODE !== 'ON')  return '/login';
-        else  return '/estar-preparado-faz-diferenca';
+        else  return '/gerindo-de-perto-a-equipe';
       }
     },
     {
@@ -324,7 +324,7 @@ router.beforeEach((to, from, next) => {
   const onBoardingPages = ['welcome', 'howIsTheJourneyOrganized', 'chooseYourNavigationType'];
   if (localStorage.getItem(productOnboardingKey) === 'N' && onBoardingPages.includes(to.name)) {
     if (process.env.VUE_APP_SCORM_MODE !== 'ON')  next({ path: '/comece-por-aqui' })
-    else  next({ path: '/estar-preparado-faz-diferenca' })
+    else  next({ path: '/gerindo-de-perto-a-equipe' })
   }
 
   next();
