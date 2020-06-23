@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.6 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-08271059289839D1830D0E7448F42E4A" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-5D8F66794757800F98D136DBCC8B4C84">
+    <organization identifier="ORG-5D8F66794757800F98D136DBCC8B4C84" structure="hierarchical">
+      <title>Primeira Gestão - Gerir a equipe</title>
+      <item identifier="ITEM-6F5047EEDE3E09B0488CA38147A041C7" isvisible="true">
+        <title>Conteúdo</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="common_files" type="webcontent">
+      <file href="content/31-gerindo-de-perto-a-equipe/index.html" />
+      <file href="content/32-foto-novela/index.html" />
+      <file href="content/33-proximidade/index.html" />
+      <file href="content/34-situacoes-delicadas/index.html" />
+      <file href="content/35-criar-espaco/index.html" />
+      <file href="content/36-principios-da-colaboracao/index.html" />
+      <file href="content/37-o-essencial-para-delegar/index.html" />
+      <file href="content/38-disposto-a-correr-o-risco/index.html" />
+      <file href="content/39-um-mapa-da-conﬁanca/index.html" />
+      <file href="content/40-prepare-se-para-delegar/index.html" />
+      <file href="content/41-inspire-se-aqui/index.html" />
+      <file href="content/42-quem-ja-passou-por-isso/index.html" />
+      <file href="content/43-mestre-e-aprendiz/index.html" />
+      <file href="content/44-o-poder-do-habito/index.html" />
+      <file href="content/45-uma-experiencia-transformadora/index.html" />
+      <file href="content/46-voce-conhece-o-outro/index.html" />
+      <file href="content/47-inspire-se-aqui/index.html" />
+      <file href="content/48-assuntos-dificeis-de-tratar/index.html" />
+      <file href="content/49-comunicacao-com-a-equipe/index.html" />
+      <file href="content/50-da-atracao-a-demissao/index.html" />
+      <file href="content/51-os-caminhos-da-contratacao/index.html" />
+      <file href="content/52-perguntas-na-hora-de-contratar/index.html" />
+      <file href="content/53-check-list/index.html" />
+      <file href="content/54-o-momento-de-demitir/index.html" />
+      <file href="content/55-para-reﬂetir/index.html" />
+      <file href="content/56-a-parceria-com-o-rh/index.html" />
+      <file href="content/57-baixo-desempenho-profissional/index.html" />
+      <file href="content/58-reestruturacao-da-empresa/index.html" />
+      <file href="content/59-falta-de-aderencia-a-cultura/index.html" />
+      <file href="content/60-relacionamento-ruim-com-a-equipe/index.html" />
+      <file href="content/61-falta-de-etica/index.html" />
+      <file href="content/62-inspire-se-aqui/index.html" />
+    </resource>
+    <resource href="index.html" identifier="index" adlcp:scormtype="sco" type="text/html">
+      <file href="js/app.js" />
+      <file href="js/app.js.map" />
+      <file href="js/chunk-vendors.js" />
+      <file href="js/chunk-vendors.js.map" />
+      <file href="js/scorm.js" />
+      <file href="img/loading.gif" />
+      <file href="img/login-cover.jpg" />
+      <file href="img/map-v.png" />
+      <file href="img/map.png" />
+      <file href="img/random-navigation.png" />
+      <file href="img/SanukOT-Bold.svg" />
+      <file href="img/SanukOT-Thin.svg" />
+      <file href="img/SanukOT.svg" />
+      <file href="img/sequel-navigation.png" />
+      <file href="css/app.css" />
+      <file href="css/chunk-vendors.css" />
+      <dependency identifierref="common_files" />
+    </resource>
+  </resources>
+</manifest>
+

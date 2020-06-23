@@ -114,16 +114,15 @@ const mixin = {
         // Cast
         appChecks = JSON.parse(appChecks);
 
+        // Add new stage
+        appChecks.push( objectId );
+
         // SCORM completed
-        if (appChecks.length === process.env.VUE_APP_QUANTITY_OF_SESSION) {
+        if (appChecks.length >= process.env.VUE_APP_QUANTITY_OF_SESSION) {
           window.scormAPI.LMSInitialize('');
           window.scormAPI.LMSSetValue("cmi.core.lesson_status", "completed");
           window.scormAPI.LMSCommit('');
-          console.log('COMPLETED');
         }
-
-        // Add new stage
-        appChecks.push( objectId );
 
         // Remove duplicate values
         appChecks = Array.from(new Set(appChecks));
