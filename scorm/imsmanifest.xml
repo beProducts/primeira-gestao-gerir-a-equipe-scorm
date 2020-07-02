@@ -9,7 +9,7 @@
   <organizations default="ORG-5D8F66794757800F98D136DBCC8B4C84">
     <organization identifier="ORG-5D8F66794757800F98D136DBCC8B4C84" structure="hierarchical">
       <title>Primeira Gestão - Gerir a equipe</title>
-      <item identifier="ITEM-6F5047EEDE3E09B0488CA38147A041C7" isvisible="true">
+      <item identifier="ITEM-6F5047EEDE3E09B0488CA38147A041C7" identifierref="index" isvisible="true">
         <title>Conteúdo</title>
       </item>
     </organization>
